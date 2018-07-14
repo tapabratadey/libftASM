@@ -1,0 +1,2 @@
+gcc will optimize .c files to .s files and then to object files and then link them
+registries are small slots that lets you save things
