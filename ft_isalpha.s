@@ -13,6 +13,10 @@
 
 ; int ft_isalpha(int c);
 ; check if the character is an alphabet
+; function takes an int 
+; then we compare that int to the ascii values of a to z and A to Z
+; if the int is between the range then we return 1
+; else we return 0
 
 ; Tells the assembler that we're writing 64-bit code
 [bits 64]
@@ -32,16 +36,34 @@ _ft_isalpha:
 
     ; Create a local label. A local label is not exported and begins with "."
     .check:
-    cmp rsi, 41h    ; 41h = 'A'
-                    ; jump to ret 1
-   ; cmp rax, 5ah    ; 5ah = 'Z'
-    ;j               ; jump to ret 1
-    ;cmp rax, 61h    ; 61h = 'a'
-                    ; jump to ret 1
-   ; cmp rax, 7ah    ; 7ah = 'z'
-    ;jg              ; jump to ret 1
+    cmp rdi, 122
+    jle .is_alpha
+    jge .not_alpha
+    cmp rdi, 97
+    jle .is_alpha
+    jge .not_alpha
+    cmp rdi, 90     ; rdi (register destination index) stores a single byte cmp to 'Z'
+    jle .is_alpha   ; jump lower/equal to .is_alpha
+    jge .not_alpha  ; jump greater/equal to .not_alpha
+    ;cmp rdi, 65     ; rdi (register destination index) stores a single byte cmp to 'A'
+    ;jge .is_alpha   ; jump greater/equal to .is_alpha
+    ;jle .not_alpha  ; jump lower/equal to .not_alpha
+    ;cmp rdi, 97     ; rdi (register destination index) stores a single byte cmp to 'a'
+    ;jge .is_alpha   ; jump above/equal to .is_alpha
+    ;jle .not_alpha  ;
+    ;cmp rdi, 122   ; rdi (register destination index) stores a single byte cmp to 'z'
+    ;jge .is_alpha  ; jump above/equal to .is_alpha
+    ;jle .not_alpha ; else jump to .not_alpha
+
+    .is_alpha:
+    mov rax, 1
+
+    .not_alpha:
     ret
-; function takes an int 
-; then we compare that int to the ascii values of a to z and A to Z
-; if the int is between the range then we return 1
-; else we return 0
+
+    ; jge: jump if greater or equal
+    ; jle: jump if less or equal
+    ; if rdi - 65 = neg then jle not_alpha / pos then jge is_alpha
+    ; if rdi - 90 = neg then jge not_alpha / pos then jle is_alpha
+    ; if rdi - 97 = neg then jge not_alpha / pos then jle is_alpha
+    ; if rdi - 122 = neg then  

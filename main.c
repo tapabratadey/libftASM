@@ -20,10 +20,18 @@ int main()
 {
     #if 1
     printf("FT_ISALPHA\n");
-    printf("%d", ft_isalpha('a'));
-    // if (ft_isalpha('A') == 0)
-    //     printf("Alpha");
-    // printf("not alpha");
+    printf(" 'A' (65)  : %s", ft_isalpha('A') ? "alpha\n" : "not alpha\n");
+    printf(" 'a' (97)  : %s", ft_isalpha('a') ? "alpha\n" : "not alpha\n");
+    printf(" 'z' (122) : %s", ft_isalpha('z') ? "alpha\n" : "not alpha\n");
+    printf(" 'Z' (90)  : %s", ft_isalpha('Z') ? "alpha\n" : "not alpha\n");
+    printf(" ')' (41)  : %s", ft_isalpha(')') ? "alpha\n" : "not alpha\n");
+    printf(" '^' (94)  : %s", ft_isalpha('^') ? "alpha\n" : "not alpha\n"); 
+    printf(" '1' (49)  : %s", ft_isalpha('1') ? "alpha\n" : "not alpha\n");
+    printf(" '@' (64)  : %s", ft_isalpha('@') ? "alpha\n" : "not alpha\n");
+    printf(" '$' (36)  : %s", ft_isalpha('$') ? "alpha\n" : "not alpha\n");
+    printf(" '~' (126) : %s", ft_isalpha('~') ? "alpha\n" : "not alpha\n");
+    printf(" '=' (61)  : %s", ft_isalpha('=') ? "alpha\n" : "not alpha\n");
+    printf(" ']' (93)  : %s", ft_isalpha(']') ? "alpha\n" : "not alpha\n");
     #endif
 
     #if 0
