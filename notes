@@ -1,2 +1,21 @@
 gcc will optimize .c files to .s files and then to object files and then link them
 registries are small slots that lets you save things
+
+• bzero (done)
+• strcat
+• isalpha
+• isdigit
+• isalnum
+• isascii
+• isprint
+• toupper
+• tolower
+• puts 
+• strlen (done)
+• memset
+• memcpy
+• strdup 
+• cat
+
+bonus:
+5 more functions
