@@ -15,9 +15,32 @@
 
 int main()
 {
-
     #if 1
-    
+    printf("FT_TOLOWER\n");
+    char *test = "ABCDEFGHIJKLKMNOPQRSTUVWXYZ";
+    char *test1 = "abcdefghigklmnopqrstuvwxyz1234567890~@#$^&*";
+    printf("CONVERTED TO LOWER\n");
+    for(int i = 0; i < strlen(test); i++){
+        printf("%c: %c\n", test[i], (char)ft_tolower(test[i]));
+    }
+    printf("\nAS IS\n");
+    for(int i = 0; i < strlen(test1); i++){
+        printf("%c: %c\n", test1[i], (char)ft_tolower(test1[i]));
+    }
+    #endif
+
+    #if 0
+    printf("FT_TOUPPER\n");
+    char *test = "abcdefghigklmnopqrstuvwxyz";
+    char *test1 = "ABCDEFGHIJKLKMNOPQRSTUVWXYZ1234567890~@#$^&*";
+    printf("CONVERTED TO UPPER\n");
+    for(int i = 0; i < strlen(test); i++){
+        printf("%c: %c\n", test[i], (char)ft_toupper(test[i]));
+    }
+    printf("\nAS IS\n");
+    for(int i = 0; i < strlen(test1); i++){
+        printf("%c: %c\n", test1[i], (char)ft_toupper(test1[i]));
+    }
     #endif
 
     #if 0

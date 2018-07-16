@@ -7,9 +7,9 @@ registries are small slots that lets you save things
 • isdigit  (done)
 • isalnum (done)
 • isascii (done)
-• isprint 
-• toupper
-• tolower
+• isprint (done)
+• toupper (done)
+• tolower (done)
 • puts 
 • strlen (done)
 • memset
