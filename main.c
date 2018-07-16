@@ -12,9 +12,43 @@
 
 #include "libftasm.h"
 
+
 int main()
 {
+
     #if 1
+    
+    #endif
+
+    #if 0
+    printf("FT_ISPRINT\n");
+    printf("EXPECTED IS_PRINT\n");
+    char *test = "0123456789ABCabcXYZxyz";
+    for(int i = 0; i < strlen(test); i++){
+        printf(" '%c' (%d): %s", test[i], (char)test[i], ft_isprint(test[i]) ? "print\n" : "can't print\n");
+    }
+    printf("EXPECTED NOT PRINTABLE:\n");
+    printf("ascii 128: %s", ft_isprint(128) ? "print\n" : "can't print\n");
+    printf("ascii 30: %s", ft_isprint(30) ? "print\n" : "can't print\n");   
+    #endif
+
+    #if 0
+    printf("FT_ISASCII\n");
+    printf("EXPECTED ASCII:\n");
+    char *test = "0123456789ABCabcXYZxyz";
+    char *test1 = "/:!~#$%%^&*(){}[]@*)&";
+    for(int i = 0; i < strlen(test); i++){
+        printf(" '%c' (%d): %s", test[i], (char)test[i], ft_isascii(test[i]) ? "ascii\n" : "not ascii\n");
+    }
+    for(int i = 0; i < strlen(test1); i++){
+        printf(" '%c' (%d): %s", test1[i], (char)test1[i], ft_isascii(test1[i]) ? "ascii\n" : "not ascii\n");
+    }
+    printf("NOT ASCII\n");
+    printf(" '%c' (%d): %s", (char)-1, -1, ft_isascii(-1) ? "ascii\n" : "not ascii\n");
+    printf(" '%c' (%d): %s", (char)0x80, 0x80, ft_isascii(0x80) ? "ascii\n" : "not ascii\n");    
+    #endif
+
+    #if 0
     printf("FT_ISALNUM\n");
     printf("EXPECTED ISALNUM:\n");
     char *test = "0123456789ABCabcXYZxyz";

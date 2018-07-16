@@ -16,11 +16,16 @@
 
 #include <stdio.h>
 #include <string.h>
+#include <stdio.h>
+#include <ctype.h>
 
 extern unsigned int ft_strlen(const char* str);
 extern void         ft_bzero(void *s, size_t n);
 extern int          ft_isalpha(int c);
 extern int          ft_isdigit(int c);
 extern int          ft_isalnum(int c);
+extern int          ft_isascii(int c);
+extern int          ft_isprint(int c);
+
 
 #endif //LIBFT_ASM_
