@@ -36,24 +36,14 @@ _ft_isalpha:
 
     ; Create a local label. A local label is not exported and begins with "."
     .check:
-    cmp rdi, 122
-    jle .is_alpha
-    jge .not_alpha
-    cmp rdi, 97
-    jle .is_alpha
-    jge .not_alpha
-    cmp rdi, 90     ; rdi (register destination index) stores a single byte cmp to 'Z'
-    jle .is_alpha   ; jump lower/equal to .is_alpha
-    jge .not_alpha  ; jump greater/equal to .not_alpha
-    ;cmp rdi, 65     ; rdi (register destination index) stores a single byte cmp to 'A'
-    ;jge .is_alpha   ; jump greater/equal to .is_alpha
-    ;jle .not_alpha  ; jump lower/equal to .not_alpha
-    ;cmp rdi, 97     ; rdi (register destination index) stores a single byte cmp to 'a'
-    ;jge .is_alpha   ; jump above/equal to .is_alpha
-    ;jle .not_alpha  ;
-    ;cmp rdi, 122   ; rdi (register destination index) stores a single byte cmp to 'z'
-    ;jge .is_alpha  ; jump above/equal to .is_alpha
-    ;jle .not_alpha ; else jump to .not_alpha
+    cmp rdi, 65     ; cmp with 'A'
+    jl .not_alpha   ; if it is less than 65 then error
+    cmp rdi, 90     ; cmp with 'Z'
+    jle .is_alpha   ; if it is less than/equal to 90 then it is_alpha
+    cmp rdi, 97     ; cmp with 'a'
+    jl .not_alpha   ; if it is less than 97 then it is not alpha
+    cmp rdi, 122    ; cmp with 'z'
+    jg  .not_alpha  ; if it is greater than 122 then it is not an alpha
 
     .is_alpha:
     mov rax, 1
@@ -66,4 +56,4 @@ _ft_isalpha:
     ; if rdi - 65 = neg then jle not_alpha / pos then jge is_alpha
     ; if rdi - 90 = neg then jge not_alpha / pos then jle is_alpha
     ; if rdi - 97 = neg then jge not_alpha / pos then jle is_alpha
-    ; if rdi - 122 = neg then  
+    ; if rdi - 122 = neg then

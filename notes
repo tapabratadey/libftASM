@@ -3,8 +3,8 @@ registries are small slots that lets you save things
 
 • bzero (done)
 • strcat
-• isalpha
-• isdigit
+• isalpha (done)
+• isdigit 
 • isalnum
 • isascii
 • isprint
@@ -19,3 +19,36 @@ registries are small slots that lets you save things
 
 bonus:
 5 more functions
+
+
+
+SRCDIR := src
+BINDIR := bin
+
+SRCS := $(wildcard $(SRCDIR)/*.s)
+OBJS := $(patsubst $(SRCDIR)/%.s, $(BINDIR)/%.o, $(SRCS))
+
+TARGET := libftasm.a
+
+all: $(TARGET)
+
+clean:
+	@echo "Cleaning object files"
+	@rm -rf $(BINDIR)
+
+fclean: clean
+	@echo "Cleaning binary"
+	@rm -f $(TARGET)
+
+re: fclean all
+
+$(TARGET): $(OBJS)
+	@echo "LD $@"
+	@ar rc $@ $^
+
+$(OBJS): $(BINDIR)/%.o: $(SRCDIR)/%.s
+	@mkdir -p $(shell dirname $@)
+	@echo "AS $<"
+	@nasm -f macho64 -o $@ $<
+
+.PHONY: all clean fclean
