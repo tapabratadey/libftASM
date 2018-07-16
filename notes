@@ -1,17 +1,23 @@
 gcc will optimize .c files to .s files and then to object files and then link them
 registries are small slots that lets you save things
+System calls are APIs for the interface between the user space and the kernel space
+Take the following steps to use sys calls:
+-Put the system call number in the EAX register.
+-Store the arguments to the system call in the registers EBX, ECX, etc.
+-Call the relevant interrupt (80h).
+-The result is usually returned in the EAX register.
 
-• bzero (done)
+• bzero	  (done)
 • strcat
 • isalpha (done)
-• isdigit  (done)
+• isdigit (done)
 • isalnum (done)
 • isascii (done)
 • isprint (done)
 • toupper (done)
 • tolower (done)
-• puts 
-• strlen (done)
+• puts 	  (done)	
+• strlen  (done)
 • memset
 • memcpy
 • strdup 

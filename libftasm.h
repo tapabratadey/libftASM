@@ -28,5 +28,6 @@ extern int          ft_isascii(int c);
 extern int          ft_isprint(int c);
 extern int          ft_toupper(int c);
 extern int          ft_tolower(int c);
+extern int          ft_puts(const char *str);
 
 #endif //LIBFT_ASM_

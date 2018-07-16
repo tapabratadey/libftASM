@@ -15,7 +15,12 @@
 
 int main()
 {
-    #if 1
+    #if 0
+    printf("FT_PUTS\n");
+    ft_puts("hellooo");
+    ft_puts("123245\n");
+    #endif
+    #if 0
     printf("FT_TOLOWER\n");
     char *test = "ABCDEFGHIJKLKMNOPQRSTUVWXYZ";
     char *test1 = "abcdefghigklmnopqrstuvwxyz1234567890~@#$^&*";
