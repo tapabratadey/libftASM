@@ -27,7 +27,7 @@ _ft_strlen:
 
     ; Create a local label. A local label is not exported, and begins with "."
     .loop_start:
-    mov bl, byte[rdi]   ; loads a single byte rdi(register destination index)(destination for data copies) into bl (rdx low 8bit)(bl branches itself to the address of rdi)
+    mov bl, byte [rdi]   ; loads a single byte rdi(register destination index)(destination for data copies) into bl (rdx low 8bit)(bl branches itself to the address of rdi)
     cmp bl, 0           ; check if bl is 0
     jz  .finish_loop    ; if we hit a null byte (end of string), finish the loop
 
