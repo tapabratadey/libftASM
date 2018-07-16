@@ -4,8 +4,8 @@ registries are small slots that lets you save things
 • bzero (done)
 • strcat
 • isalpha (done)
-• isdigit 
-• isalnum
+• isdigit  (done)
+• isalnum (done)
 • isascii
 • isprint
 • toupper
@@ -16,7 +16,6 @@ registries are small slots that lets you save things
 • memcpy
 • strdup 
 • cat
-
 bonus:
 5 more functions
 

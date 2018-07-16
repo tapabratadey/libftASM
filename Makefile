@@ -16,6 +16,7 @@ ft_strlen.s\
 ft_bzero.s\
 ft_isalpha.s\
 ft_isdigit.s\
+ft_isalnum.s\
 
 OBJ_ASM = $(SRC_ASM:.s=.o)
 NASM = nasm

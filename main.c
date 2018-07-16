@@ -10,16 +10,27 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
-
-extern unsigned int ft_strlen(const char* str);
-extern void         ft_bzero(void *s, size_t n);
-extern int          ft_isalpha(int c);
-extern int          ft_isdigit(int c);
+#include "libftasm.h"
 
 int main()
 {
+    #if 1
+    printf("FT_ISALNUM\n");
+    printf("EXPECTED ISALNUM:\n");
+    char *test = "0123456789ABCabcXYZxyz";
+    // printf("%lu", strlen(test));
+    // printf(" '1' (49)  : %s", ft_isalnum('1') ? "alnum\n" : "not alnum\n");
+    // printf(" '9' (57)  : %s", ft_isalnum('9') ? "alnum\n" : "not alnum\n");
+    for(int i = 0; i < strlen(test); i++){
+        printf(" '%c' (%d): %s", test[i], (char)test[i], ft_isalnum(test[i]) ? "alnum\n" : "not alnum\n");
+    }
+    printf("EXPECTED NOT ALNUM:\n");
+    char *test1 = "/:!~#$%%^&*(){}[]@*)&";
+    for(int i = 0; i < strlen(test1); i++){
+        printf(" '%c' (%d): %s", test1[i], (char)test1[i], ft_isalnum(test1[i]) ? "alnum\n" : "not alnum\n");
+    }
+    #endif
+
     #if 0
     printf("FT_ISDIGIT\n");
     printf("EXPECTED DIGIT:\n");\

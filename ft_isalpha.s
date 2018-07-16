@@ -30,8 +30,7 @@ section .text
 
 ; int ft_isalpha(int c)
 _ft_isalpha:
-    ; Functions return values in the register rax. So, we will use that to
-    ; store the number of character in the string
+    ; Functions return values in the register rax. 
     xor rax, rax
 
     ; Create a local label. A local label is not exported and begins with "."

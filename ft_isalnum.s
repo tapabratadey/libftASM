@@ -1,47 +1,54 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    ft_isdigit.s                                       :+:      :+:    :+:    #
+#    ft_isalnum.s                                       :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: tadey <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2018/07/15 16:33:09 by tadey             #+#    #+#              #
-#    Updated: 2018/07/15 16:33:10 by tadey            ###   ########.fr        #
+#    Created: 2018/07/15 17:12:24 by tadey             #+#    #+#              #
+#    Updated: 2018/07/15 17:12:25 by tadey            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-; int ft_isdigit(int c);
-; check if the number is a digit
+; int ft_isalnum(int c)
+; check if the character is either an alphabet/number
 ; function takes an int
 ; then we compare that int to the ascii values of 1 to 9
+; and ascii values of a to z and A to Z
 ; if the int is between the range then we return 1
 ; else we return 0
+; we can call ft_isalpha and ft_isdigit
 
 ; Tells the assembler that we're writing 64-bit code
 [bits 64]
 
+extern _ft_isalpha
+extern _ft_isdigit
 ; Tells the assembler that what symbols (in our case functions)
 ; that we're trying to export
-global _ft_isdigit
+global _ft_isalnum
 
-; The .text section is where all code (instructions to execute) should be
+; Tells .text section is where all code (instructions to execute) should be
 section .text
 
-; int ft_isdigit(int c)
-_ft_isdigit:
+; int ft_isalnum(int c)
+_ft_isalnum:
     ; Functions return values in the register rax.
     xor rax, rax
 
     ; Create a local label. A local label is not exported and begins with "."
     .check:
-    cmp rdi, 48     ; cmp with 0
-    jl  .not_digit  ; if it is less than 49 then not_digit
-    cmp rdi, 57     ; cmp with 9
-    jg  .not_digit  ; if it is greater than 57 then not_digit
-    
-    .is_digit:
-    mov rax, 1
+    call    _ft_isdigit
+    cmp     rax, 1
+    je      .is_alnum
+    call    _ft_isalpha
+    cmp     rax, 1
+    je      .is_alnum  
+    jne     .not_alnum
 
-    .not_digit:
+    .is_alnum:
+    mov rax, 1
+    
+    .not_alnum:
     ret
