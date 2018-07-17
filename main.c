@@ -6,7 +6,7 @@
 /*   By: tadey <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/14 15:39:30 by tadey             #+#    #+#             */
-/*   Updated: 2018/07/14 15:39:31 by tadey            ###   ########.fr       */
+/*   Updated: 2018/07/17 10:18:22 by tadey            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,17 @@
 int main()
 {
     #if 1
+    printf("FT_STRCAT\n");
+    // printf("%s", ft_strcat("hello", "bro"));
+    printf("%s", ft_strcat("42", "Silicon Valley"));
+    #endif
+
+
+    #if 0
     printf("FT_MEMSET\n");
-    char nigger[64] = "hello";
-    printf("%s\n", (char*)ft_memset(nigger, 't', 1));
-    printf("%s", (char*)ft_memset(nigger, 't', 4));    
+    char yolo[64] = "hello";
+    printf("%s\n", (char*)ft_memset(yolo, 't', 1));
+    printf("%s", (char*)ft_memset(yolo, 't', 4));    
     #endif
 
     #if 0
