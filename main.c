@@ -12,9 +12,15 @@
 
 #include "libftasm.h"
 
-
 int main()
 {
+    #if 1
+    printf("FT_MEMSET\n");
+    char nigger[64] = "hello";
+    printf("%s\n", (char*)ft_memset(nigger, 't', 1));
+    printf("%s", (char*)ft_memset(nigger, 't', 4));    
+    #endif
+
     #if 0
     printf("FT_PUTS\n");
     ft_puts("hellooo");

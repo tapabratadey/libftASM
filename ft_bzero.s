@@ -31,13 +31,12 @@ _ft_bzero:
 
     ; Create a local label. A local label is not exported, and begins with "."
     .loop_start:
-    cmp rsi, rax           ; check if rsi (register source index) is equal to rax (return register)
-    jz  .finish_loop     ; if rax is not greater than 0 then finish the loop
+    cmp rsi, rax            ; check if rsi (register source index) is equal to rax (return register)
+    jz  .finish_loop        ; if rax is not greater than 0 then finish the loop
 
-    dec rsi              ; rsi--
-    ;inc rdi              ; rdi is char* -increment it to point to the next character in the string
-    mov byte[rdi+rsi], 0 ; rdi[rsi] = 0
-    jmp .loop_start      ; jump to the start of the loop again (in order to check the next character)
+    dec rsi                 ; rsi--
+    mov byte [rdi + rsi], 0 ; rdi[rsi] = 0
+    jmp .loop_start         ; jump to the start of the loop again (in order to check the next character)
 
     .finish_loop:
-    ret                 ;ret
+    ret                     ;ret

@@ -29,5 +29,6 @@ extern int          ft_isprint(int c);
 extern int          ft_toupper(int c);
 extern int          ft_tolower(int c);
 extern int          ft_puts(const char *str);
+void	            *ft_memset(void *b, int c, size_t len);
 
 #endif //LIBFT_ASM_

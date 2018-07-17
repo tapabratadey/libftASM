@@ -22,6 +22,7 @@ ft_isprint.s\
 ft_toupper.s\
 ft_tolower.s\
 ft_puts.s\
+ft_memset.s\
 
 OBJ_ASM = $(SRC_ASM:.s=.o)
 NASM = nasm
