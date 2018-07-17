@@ -8,7 +8,7 @@ Take the following steps to use sys calls:
 -The result is usually returned in the EAX register.
 
 • bzero	  (done)
-• strcat
+• strcat  (done)
 • isalpha (done)
 • isdigit (done)
 • isalnum (done)

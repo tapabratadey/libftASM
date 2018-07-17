@@ -16,8 +16,9 @@ int main()
 {
     #if 1
     printf("FT_STRCAT\n");
+    char yolo[64] = "hello";
     // printf("%s", ft_strcat("hello", "bro"));
-    printf("%s", ft_strcat("42", "Silicon Valley"));
+    printf("%s", ft_strcat(yolo, "Silicon Valley\n"));
     #endif
 
 
@@ -30,9 +31,11 @@ int main()
 
     #if 0
     printf("FT_PUTS\n");
-    ft_puts("hellooo");
+    ft_puts("hellooo\n");
     ft_puts("123245\n");
+    ft_puts("");
     #endif
+
     #if 0
     printf("FT_TOLOWER\n");
     char *test = "ABCDEFGHIJKLKMNOPQRSTUVWXYZ";
@@ -64,13 +67,14 @@ int main()
     #if 0
     printf("FT_ISPRINT\n");
     printf("EXPECTED IS_PRINT\n");
-    char *test = "0123456789ABCabcXYZxyz";
-    for(int i = 0; i < strlen(test); i++){
-        printf(" '%c' (%d): %s", test[i], (char)test[i], ft_isprint(test[i]) ? "print\n" : "can't print\n");
-    }
-    printf("EXPECTED NOT PRINTABLE:\n");
-    printf("ascii 128: %s", ft_isprint(128) ? "print\n" : "can't print\n");
-    printf("ascii 30: %s", ft_isprint(30) ? "print\n" : "can't print\n");   
+    printf("%d", ft_isprint(0));
+    // char *test = "0123456789ABCabcXYZxyz";
+    // for(int i = 0; i < strlen(test); i++){
+    //     printf(" '%c' (%d): %s", test[i], (char)test[i], ft_isprint(test[i]) ? "print\n" : "can't print\n");
+    // }
+    // printf("EXPECTED NOT PRINTABLE:\n");
+    // printf("ascii 128: %s", ft_isprint(128) ? "print\n" : "can't print\n");
+    // printf("ascii 30: %s", ft_isprint(30) ? "print\n" : "can't print\n");   
     #endif
 
     #if 0
