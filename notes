@@ -19,7 +19,7 @@ Take the following steps to use sys calls:
 • puts 	  (done)	
 • strlen  (done)
 • memset  (done)
-• memcpy
+• memcpy	
 • strdup 
 • cat
 bonus:
