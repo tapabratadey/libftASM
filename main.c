@@ -14,12 +14,20 @@
 
 int main()
 {
+
+    #if 1
+    printf("FT_STRDUP\n");
+    char yolo[64] = "hello";
+    // printf("%s", ft_strdup(yolo));
+    printf("%s", (void *)ft_strdup(yolo));
+    #endif
+
     #if 0
     printf("FT_MEMSET\n");
     char yolo[64] = "tapa";
     char man[64] = "hey";
     printf("%s", (void *)ft_memcpy(yolo, man, 2));
-    
+
     #endif
 
     #if 0

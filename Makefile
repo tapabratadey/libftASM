@@ -25,6 +25,7 @@ ft_puts.s\
 ft_memset.s\
 ft_strcat.s\
 ft_memcpy.s\
+ft_strdup.s\
 
 OBJ_ASM = $(SRC_ASM:.s=.o)
 NASM = nasm

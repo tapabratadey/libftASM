@@ -32,5 +32,6 @@ extern int          ft_puts(const char *str);
 void	            *ft_memset(void *b, int c, size_t len);
 char                *ft_strcat(char *s1, const char *s2);
 void                *ft_memcpy(void *dst, const void *src, size_t n);
+char	            *ft_strdup(const char *src);
 
 #endif //LIBFT_ASM_
