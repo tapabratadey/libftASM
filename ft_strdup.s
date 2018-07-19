@@ -22,7 +22,6 @@ global _ft_strdup
 extern _ft_strlen
 extern _malloc
 extern _free
-extern _printf
 
 ; The .text section is where all code (instructions to execute) should be
 section .text
@@ -30,26 +29,28 @@ section .text
 ; char *ft_strdup(const char *src)
 ;                   rdi
 _ft_strdup:
-    xor rax, rax
+    xor rax, rax                ; clearing out rax
 
-    mov r13, rdi                ; store the string in r13
-    call _ft_strlen             ; find the strlen of the string
-    mov r12, rax                ; store the strlen in r12
+    mov r13, rdi                ; storing the source string rdi in r13 
+    call _ft_strlen             ; find the strlen of the string which gets stored in rax
+    mov r12, rax                ; storing the strlen rax in r12
     mov rdi, r12                ; storing the length in rdi for malloc to use
-
-    call _malloc                ; call malloc to allocate that many bytes
-    ; on return, rax points to our newly-allocated memory
-    mov r14, rax                ; storing the returned pointer to r14
+    push rdi
+    call _malloc                ; calling malloc to allocate that many bytes
+    pop rdi
+    ; rax points now points to allocated mem
+    mov r14, rax                ; storing the returned pointer rax to r14
 
     cmp r14, 0                  ; error check if the pointer is null
     jz .end                     ; if null then jump to .end and return null
 
+    mov r15, r14
     ; else start the loop
     .loop_start:
-    cmp r12, 0
+    cmp r12, 0                  ; cmp if r12 is 0
     jz  .finish_loop
 
-    mov bl, byte [r13]          ; treating the string as a byte and storing in bl
+    mov bl, byte [r13]          ; treating the source string as a byte and storing in bl
     mov byte [r14], bl          ; treating the pointer as a byte and storing bl to it (i.e the string)
     dec r12                     ; decrementing the size
     inc r13                     ; incrementing the source string
@@ -58,11 +59,14 @@ _ft_strdup:
 
     .finish_loop:
     mov byte [r14], 0           ; null terminating the string
-    ; mov rdi, rax                ; moving malloc's allocated string to rdi
-    ; call _free                  ; then calling free
-    mov rax, r14                ; moving r14 into rax and then returning
+    mov rax, r15                ; moving r14 into rax and then returning
     ret
 
     .end:
-    mov rax, 0
+    mov rax, 0                  ; if allocated pointer is null then ret null
     ret
+    
+    ; exit
+    ; mov rax, 0x02000001         ; system call for exit
+    ; xor rdi, rdi                ; exit code 0
+    ; syscall  
