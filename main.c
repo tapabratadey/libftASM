@@ -19,6 +19,12 @@
 
 int main()
 {
+    #if 0
+    printf("%d", ft_add(5, 4));
+    printf("%d", ft_sub(1, 4));
+    printf("%d", ft_mul(10, 4));
+    #endif
+
     #if 1
     printf("FT_CAT\n");
     int fd = 0;

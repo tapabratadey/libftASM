@@ -33,6 +33,9 @@ extern void	        *ft_memset(void *b, int c, size_t len);
 extern char         *ft_strcat(char *s1, const char *s2);
 extern void         *ft_memcpy(void *dst, const void *src, size_t n);
 extern char	        *ft_strdup(const char *src);
-extern char         *ft_cat(int fd);
+extern void         ft_cat(int fd);
+extern int          ft_add(int a, int b);
+extern int          ft_sub(int a, int b);
+extern int          ft_mul(int a, int b);
 
 #endif //LIBFT_ASM_
