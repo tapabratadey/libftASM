@@ -16,7 +16,7 @@
 ; Tells the assembler that we're writing 64-bit code
 [bits 64]
 
-; Tells the assembler that what symbols that what symbols (in our case functions)
+; Tells the assembler that what symbols (in our case functions)
 ; that we're trying to export
 global _ft_strdup
 extern _ft_strlen
@@ -35,9 +35,9 @@ _ft_strdup:
     call _ft_strlen             ; find the strlen of the string which gets stored in rax
     mov r12, rax                ; storing the strlen rax in r12
     mov rdi, r12                ; storing the length in rdi for malloc to use
-    push rdi
+    push rdi                    ; push rdi to stack for malloc to use
     call _malloc                ; calling malloc to allocate that many bytes
-    pop rdi
+    pop rdi                     ; pop rdi out of the stack after malloc is done
     ; rax points now points to allocated mem
     mov r14, rax                ; storing the returned pointer rax to r14
 

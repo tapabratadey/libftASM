@@ -11,11 +11,28 @@
 /* ************************************************************************** */
 
 #include "libftasm.h"
+#include <fcntl.h>
+#include <stdlib.h>
+#include <sys/types.h>
+#include <sys/uio.h>
+#include <unistd.h>
 
 int main()
 {
-
     #if 1
+    printf("FT_CAT\n");
+    int fd = 0;
+    fd = open ("tests/big", O_RDONLY);
+    if (fd < 0)
+    {
+        printf("can't open file\n");
+        exit(0);
+    }
+    else
+        ft_cat(fd);
+    #endif
+
+    #if 0
     printf("FT_STRDUP\n");
     char yolo[64] = "hello";
     printf("%s", ft_strdup(yolo));

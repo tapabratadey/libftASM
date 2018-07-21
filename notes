@@ -20,7 +20,7 @@ Take the following steps to use sys calls:
 • strlen  (done)
 • memset  (done)
 • memcpy  (done)
-• strdup 
+• strdup  (done)
 • cat
 bonus:
 5 more functions

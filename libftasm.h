@@ -29,9 +29,10 @@ extern int          ft_isprint(int c);
 extern int          ft_toupper(int c);
 extern int          ft_tolower(int c);
 extern int          ft_puts(const char *str);
-void	            *ft_memset(void *b, int c, size_t len);
-char                *ft_strcat(char *s1, const char *s2);
-void                *ft_memcpy(void *dst, const void *src, size_t n);
-char	            *ft_strdup(const char *src);
+extern void	        *ft_memset(void *b, int c, size_t len);
+extern char         *ft_strcat(char *s1, const char *s2);
+extern void         *ft_memcpy(void *dst, const void *src, size_t n);
+extern char	        *ft_strdup(const char *src);
+extern char         *ft_cat(int fd);
 
 #endif //LIBFT_ASM_
