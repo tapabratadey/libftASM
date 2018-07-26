@@ -33,7 +33,7 @@ _ft_toupper:
     ; Create a local label. A local label is not exported and begins with "."
     .check:
     cmp rdi, 97         ; cmp with 'a'
-    jl  .return_as_is   ; if it is less then 97 then return_as_is
+    jb  .return_as_is   ; if it is less then 97 then return_as_is
     cmp rdi, 127        ; cmp with 'z'
     jg  .return_as_is   ; if it is less than 127 then return_as_is
     
