@@ -36,9 +36,10 @@ int main()
     printf("%d", ft_add(5, 4));
     printf("%d", ft_sub(1, 4));
     printf("%d", ft_mul(10, 4));
+    printf("%d", ft_div(10, 5));
     #endif
 
-    #if 1
+    #if 0
     printf("FT_CAT\n");
     int fd = 0;
     fd = open ("tests/small", O_RDONLY);
