@@ -17,6 +17,19 @@
 #include <sys/uio.h>
 #include <unistd.h>
 
+#if 0
+int main(int ac, const char **argv)
+{
+    ft_cat(0);
+    ft_cat(open("notes", O_RDONLY));
+    ft_cat(open(argv[0], O_RDONLY));
+    ft_cat(-42);
+    (void)ac;
+    return (0);
+}
+#endif 
+
+#if 1
 int main()
 {
     #if 0
@@ -28,14 +41,8 @@ int main()
     #if 1
     printf("FT_CAT\n");
     int fd = 0;
-    fd = open ("tests/big", O_RDONLY);
-    if (fd < 0)
-    {
-        printf("can't open file\n");
-        exit(0);
-    }
-    else
-        ft_cat(fd);
+    fd = open ("tests/small", O_RDONLY);
+    ft_cat(fd);
     #endif
 
     #if 0
@@ -209,3 +216,4 @@ int main()
     #endif
     return (0);
 }
+#endif 
