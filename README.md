@@ -1,5 +1,7 @@
 # libftASM
 
+Implementation of Libc functions in x86 Assembly.</br>
+
 To generate the library:</br>
 
 git clone https://github.com/tapabratadey/libftASM.git && cd libftASM </br>
